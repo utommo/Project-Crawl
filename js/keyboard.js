@@ -153,12 +153,12 @@ function KeyCheckKeyDown(){
 
 	var KeyID = event.keyCode;
 	
-	/*if(KeyID==87 && checkifactive != true) //W
+	if(KeyID==87 && checkifactive != true) //W
 	{
 		checkifactive = true;
 		keyNUM = event.keyCode;
 		GoForward();
-	} */
+	}
 
 	if(KeyID==65 && checkifactive != true)//A
 	{ 
