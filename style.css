@@ -1,0 +1,103 @@
+body{
+	background-image:url('');
+	font-family:Lucida Sans Unicode;
+}
+
+a {
+	text-decoration:none;
+	color:#0E5CA0;
+	outline:none;
+}
+
+a:link {
+	color:none;
+}
+
+a:visited {
+	text-decoration:none;
+	color: #0E5CA0;
+	outline:none;
+}
+
+
+
+#piinstruc{
+	width:640px;
+	color:#ffffff;
+}
+
+
+.title-header{
+	font-size:24px;
+	margin:auto;
+	text-align:center;
+}
+
+#main{
+	margin-top:20px;
+	/*border:1px solid;*/
+	width:642px;
+	height:auto;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#button_wrapper{
+	float:left;
+	width:246px;
+	margin-left:198px;
+	margin-top:10px;
+}
+
+#keyboard_button_w,#keyboard_button_a,#keyboard_button_s,#keyboard_button_d{
+	background-color:#858585;
+	width:70px;
+	height:70px;
+	float:left;
+	margin:5px;
+	border:1px solid;
+	border-radius:15px;
+	-moz-border-radius:15px;  
+}
+#keyboard_button_placeholder_q,#keyboard_button_placeholder_e{
+	width:70px;
+	height:70px;
+	float:left;
+	margin:6px;
+	border:none;
+	border-radius:15px;
+	-moz-border-radius:15px;
+	background-color:#fff;
+}
+
+.button_text{
+	color:#000000;
+	text-align:center;
+	font-size:22px;
+}
+
+#extra_button_text_q,#extra_button_text_e{
+	color:#fff;
+	text-align:center;
+	font-size:22px;
+}
+
+/*  Video Stream CSS */
+#video_stream{
+	height:480px;
+	width:640px;
+	float:left;
+	border:1px solid;
+	background-color:#858585;
+	display:none;
+}
+
+/* Debug  */
+#debug{
+	position:absolute;
+	left:15px;
+	top:15px;
+	padding:5px;
+	z-index:2;
+	display:none;
+}

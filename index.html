@@ -1,0 +1,92 @@
+<html>
+<head>
+    <title>Control Panel</title>
+	
+    <link rel="shortcut icon" href="favicon.ico" />
+	
+    <meta name="author" content="Thomas Th. Enevoldsen" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+	<script src="js/prototype.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/keyboard.js"></script>
+
+</head>
+<body>
+<p>Project: Crawl - <a href="http://utommo.com">utommo.com</a></p>
+
+<div id="main">
+
+<!-- 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Video stream
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<div id="video_stream">
+	<img id="imagesrc" alt="" src="DYNAMIC" width="640" height="480" />
+</div>
+
+<!-- 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Main (Button Area)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+
+	<div id="button_wrapper">
+		<div id="keyboard_button_placeholder_q"><p id="extra_button_text_q"></p></div>
+		<div id="keyboard_button_w"><p class="button_text">W</p></div>
+		<div id="keyboard_button_placeholder_e"><p id="extra_button_text_e"></p></div>
+		<div id="keyboard_button_a"><p class="button_text">A</p></div>
+		<div id="keyboard_button_s"><p class="button_text">S</p></div>
+		<div id="keyboard_button_d"><p class="button_text">D</p></div>
+	</div>
+</div>
+
+<!-- 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Debug
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<div id ="debug">
+	<p id="actiontext">Current action:</p>
+	<textarea id="debug_text" rows="15" cols="40" readonly="true"></textarea>
+	
+	<br /><br />
+	<button type="button" onclick="GoForward()">Test W</button>
+	<button type="button" onclick="TurnLeft()">Test A</button>
+	<button type="button" onclick="TurnRight()">Test D</button>
+	<button type="button" onclick="Reverse()">Test S</button>
+	<br /><br />
+	<button type="button" onclick="Reboot()">Reboot Device</button><br />
+	<button type="button" onclick="ResetTextarea()">Reset Debug field</button><br />
+	<button type="button" onclick="ResetOutputs()">Reset Outputs</button><br />
+	<button type="button" onclick="CamPosi0()">Cam Posi 0</button><br />
+	<button type="button" onclick="CamPosi1()">Cam Posi 1</button>
+</div>
+
+<!-- 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Instructions for VNC and VLC
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<div id="piinstruc">
+
+	<label>sudo chmod a+x</label><br>
+	<label>vncserver :1 -geometry 1600×900 -depth 16 -pixelformat rgb565:<br />
+		vncserver –kill :1</label><br>
+	<label>sudo service lighttpd start </label><br>
+	<label>mjpg_streamer -i "/usr/lib/input_uvc.so -d /dev/video0 -r 640x480 -f 30 -n" -o "/usr/lib/output_http.so -p 8090 -w /var/www/"</label><br>
+	<label>kill -9 `pidof mjpg_streamer` </label><br>
+	<label>Add -b to fork to background</label><br>
+
+</div>
+<!-- End of code -->
+</body>
+</html>

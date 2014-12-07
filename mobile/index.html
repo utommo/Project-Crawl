@@ -1,0 +1,140 @@
+<html>
+<head>
+    <title>Control Panel</title>
+	
+    <link rel="shortcut icon" href="favicon.ico" />
+	
+    <meta name="author" content="Thomas Th. Enevoldsen" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="HandheldFriendly" content="true" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+	</script>
+	<script src="prototype.js"></script>
+	<script type="text/javascript">
+	jQuery(document).ready(function(){
+		jQuery("#keyboard_button_w").bind( "touchend", function(e){
+			e.preventDefault();
+			new Ajax.Request('control.py?q=release', {method: 'GET'});
+		});
+		jQuery("#keyboard_button_a").bind( "touchend", function(e){
+			e.preventDefault();
+			new Ajax.Request('control.py?q=release', {method: 'GET'});
+		});
+		jQuery("#keyboard_button_s").bind( "touchend", function(e){
+			e.preventDefault();
+			new Ajax.Request('control.py?q=release', {method: 'GET'});
+		});
+		jQuery("#keyboard_button_d").bind( "touchend", function(e){
+			e.preventDefault();
+			new Ajax.Request('control.py?q=release', {method: 'GET'});
+		});
+		
+		jQuery("#keyboard_button_w").bind( "touchstart", function(e){
+			e.preventDefault();
+			new Ajax.Request('control.py?q=w', {method: 'GET'});
+		});
+		jQuery("#keyboard_button_a").bind( "touchstart", function(e){
+			e.preventDefault();
+			new Ajax.Request('control.py?q=a', {method: 'GET'});
+		});
+		jQuery("#keyboard_button_s").bind( "touchstart", function(e){
+			e.preventDefault();
+			new Ajax.Request('control.py?q=s', {method: 'GET'});
+		});
+		jQuery("#keyboard_button_d").bind( "touchstart", function(e){
+			e.preventDefault();
+			new Ajax.Request('control.py?q=d', {method: 'GET'});
+		});
+	});
+	</script>
+	<style>
+		html {
+		overflow-y: scroll;
+		}
+	
+		body{
+		background-image:url('');
+		font-family:Lucida Sans Unicode;
+		margin:0;
+		padding:0;
+		}
+		
+		a {
+		text-decoration:none;
+		color:#0E5CA0;
+		outline:none;
+		}
+		
+		a:link {
+		color:none;
+		}
+		
+		a:visited {
+		text-decoration:none;
+		color: #0E5CA0;
+		outline:none;
+		}
+
+		#main{
+		margin-top:10px;
+		}
+		
+		#button_wrapper{
+		float:left;
+		margin-top:10px;
+		width:576px;
+		height:400px;
+		margin-left:32px;
+		}
+		
+		#keyboard_button_w,#keyboard_button_a,#keyboard_button_s,#keyboard_button_d{
+		background-color:#858585;
+		width:180px;
+		height:180px;
+		float:left;
+		margin:5px;
+		border:1px solid;
+		border-radius:15px;
+		-moz-border-radius:15px;  
+		}
+		#keyboard_button_placeholder_q,#keyboard_button_placeholder_e{
+		width:180px;
+		height:180px;
+		float:left;
+		margin:6px;
+		border:none;
+		border-radius:15px;
+		-moz-border-radius:15px;
+		background-color:#fff;
+		}
+		
+		.button_text{
+		color:#000000;
+		text-align:center;
+		font-size:50px;
+		}
+	</style>
+</head>
+<body>
+<p id="main">Raspberry Pi Car - <a href="http://utommo.com">utommo.com</a></p>
+
+<!-- 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Main (Button Area)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+<img alt="" src="http://192.168.0.25:8090/?action=stream" width="640" height="480" />
+
+	<div id="button_wrapper">
+		<div id="keyboard_button_placeholder_q"><p id="extra_button_text_q"></p></div>
+		<div id="keyboard_button_w"><p class="button_text">W</p></div>
+		<div id="keyboard_button_placeholder_e"><p id="extra_button_text_e"></p></div>
+		<div id="keyboard_button_a"><p class="button_text">A</p></div>
+		<div id="keyboard_button_s"><p class="button_text">S</p></div>
+		<div id="keyboard_button_d"><p class="button_text">D</p></div>
+	</div>
+
+<!-- End of code -->
+</body>
+</html>
