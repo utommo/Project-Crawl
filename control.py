@@ -7,7 +7,9 @@ import os
  
 #Setting up the GPIO pins
 #Use the 'BCM' numbering scheme for the pins
-G.setmode(G.BCM)         
+G.setmode(G.BCM)
+
+G.setup(31, G.OUT)      
 
 #Motor enable
 G.setup(30, G.OUT)
@@ -55,6 +57,8 @@ def app(environ, start_response):
     	G.output(23, True)
         G.output(24, False)
         G.output(25, True)
+
+        G.output(31, True)
     elif i["q"][0] == "d":
         G.output(18, False)
         G.output(23, True)
@@ -75,6 +79,8 @@ def app(environ, start_response):
     	G.output(18, False)
         G.output(25, False)
         G.output(24, False)
+
+        G.output(31, False)
     elif i["q"][0] == "halt":
         G.output(23, False)
         G.output(18, False)

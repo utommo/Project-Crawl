@@ -1,5 +1,12 @@
-document.onkeydown = KeyCheckKeyDown;
-document.onkeyup = KeyCheckKeyUp;
+//document.onkeydown = ;
+//document.onkeyup = ;
+window.onkeyup = function(){
+    KeyCheckKeyUp(arguments[0] || window.event)
+};
+
+window.onkeydown = function(){
+    KeyCheckKeyDown(arguments[0] || window.event)
+};
 
 window.onload = function()
                 {
@@ -149,35 +156,35 @@ function RevertText(){
 
 }
 
-function KeyCheckKeyDown(){
+function KeyCheckKeyDown(event){
 
-	var KeyID = event.keyCode;
+	var KeyID = event.keyCode | event.charCode;
 	
 	if(KeyID==87 && checkifactive != true) //W
 	{
 		checkifactive = true;
-		keyNUM = event.keyCode;
+		keyNUM = event.keyCode | event.charCode;
 		GoForward();
 	}
 
 	if(KeyID==65 && checkifactive != true)//A
 	{ 
 		checkifactive = true;
-		keyNUM = event.keyCode;
+		keyNUM = event.keyCode | event.charCode;
 		TurnLeft();
 	}
 	
 	else if(KeyID==83 && checkifactive != true)//S
 	{ 
 		checkifactive = true;
-		keyNUM = event.keyCode;
+		keyNUM = event.keyCode | event.charCode;
 		Reverse();
 	}
 	
 	else if(KeyID==68 && checkifactive != true)//D
 	{ 
 		checkifactive = true;
-		keyNUM = event.keyCode;
+		keyNUM = event.keyCode | event.charCode;
 		TurnRight();
 	}
 	
@@ -251,8 +258,8 @@ function KeyCheckKeyDown(){
 	textarea.scrollTop = textarea.scrollHeight- textarea.clientHeight;
 }
 
-function KeyCheckKeyUp(){
-	var KeyID = event.keyCode;
+function KeyCheckKeyUp(event){
+	var KeyID = event.keyCode | event.charCode;
 	
 	if(KeyID==keyNUM)
 	{
