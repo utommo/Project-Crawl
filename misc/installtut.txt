@@ -1,1 +1,10 @@
 http://davstott.me.uk/index.php/2013/03/17/raspberry-pi-controlling-gpio-from-the-web/
+
+http://www.raspberrypi-spy.co.uk/2012/09/raspberry-pi-p5-header/
+http://ozzmaker.com/2013/04/25/expand-the-number-of-gpio-pins-on-the-raspberry-pi/
+
+
+
+https://github.com/richardghirst/PiBits/tree/master/ServoBlaster
+https://github.com/richardghirst/PiBits/issues/24
+
