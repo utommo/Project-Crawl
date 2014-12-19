@@ -43,22 +43,6 @@ function ResetOutputs(){
 	var textarea = document.getElementById('debug_text');
 	textarea.scrollTop = textarea.scrollHeight- textarea.clientHeight;
 }
-function CamPosi0(){
-	new Ajax.Request('control.py?q=posi0', {method: 'GET'});
-	debug_text.value += "Cam Posi 0" + "\n";
-	
-	document.getElementById('actiontext').innerHTML = 'Current action:';
-	var textarea = document.getElementById('debug_text');
-	textarea.scrollTop = textarea.scrollHeight- textarea.clientHeight;
-}
-function CamPosi1(){
-	new Ajax.Request('control.py?q=posi1', {method: 'GET'});
-	debug_text.value += "Cam Posi 1" + "\n";
-	
-	document.getElementById('actiontext').innerHTML = 'Current action:';
-	var textarea = document.getElementById('debug_text');
-	textarea.scrollTop = textarea.scrollHeight- textarea.clientHeight;
-}
 
 //
 // General controls
@@ -133,19 +117,19 @@ function EnableQE(){
 }
 function ResetQE(){
 
-	document.getElementById('keyboard_button_placeholder_q').style.backgroundColor='#fff';
-	document.getElementById('keyboard_button_placeholder_e').style.backgroundColor='#fff';
+	document.getElementById('keyboard_button_placeholder_q').style.backgroundColor=null;
+	document.getElementById('keyboard_button_placeholder_e').style.backgroundColor=null;
 	
-	document.getElementById('keyboard_button_placeholder_q').style.margin='6px';
-	document.getElementById('keyboard_button_placeholder_e').style.margin='6px';
+	document.getElementById('keyboard_button_placeholder_q').style.margin=null;
+	document.getElementById('keyboard_button_placeholder_e').style.margin=null;
 	
-	document.getElementById('keyboard_button_placeholder_q').style.border='none';
-	document.getElementById('keyboard_button_placeholder_e').style.border='none';
+	document.getElementById('keyboard_button_placeholder_q').style.border=null;
+	document.getElementById('keyboard_button_placeholder_e').style.border=null;
 	
-	document.getElementById('extra_button_text_q').style.color='#fff';
-	document.getElementById('extra_button_text_e').style.color='#fff';
+	document.getElementById('extra_button_text_q').style.color=null;
+	document.getElementById('extra_button_text_e').style.color=null;
 }
-function RevertText(){
+function Stop(){
 
 	document.getElementById('keyboard_button_w').style.backgroundColor='#858585';
 	document.getElementById('keyboard_button_a').style.backgroundColor='#858585';
@@ -263,7 +247,7 @@ function KeyCheckKeyUp(event){
 	
 	if(KeyID==keyNUM)
 	{
-		RevertText();
+		Stop();
 		checkifactive = false;
 		keyNUM == 00;
 	}

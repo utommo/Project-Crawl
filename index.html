@@ -27,7 +27,7 @@ Video stream
 -->
 
 <div id="video_stream">
-	<img id="imagesrc" alt="" src="DYNAMIC" width="640" height="480" />
+	<img id="imagesrc" alt="The webcam is currently not working" src="DYNAMIC" width="640" height="480" />
 </div>
 
 <!-- 
@@ -66,8 +66,13 @@ Debug
 	<button type="button" onclick="Reboot()">Reboot Device</button><br />
 	<button type="button" onclick="ResetTextarea()">Reset Debug field</button><br />
 	<button type="button" onclick="ResetOutputs()">Reset Outputs</button><br />
-	<button type="button" onclick="CamPosi0()">Cam Posi 0</button><br />
-	<button type="button" onclick="CamPosi1()">Cam Posi 1</button>
+
+	<label>sudo chmod a+x</label><br>
+	<label>vncserver :1 -geometry 1600×900 -depth 16 -pixelformat rgb565:<br />vncserver –kill :1</label><br>
+	<label>sudo service lighttpd start </label><br>
+	<label>mjpg_streamer -i "/usr/lib/input_uvc.so -d /dev/video0 -r 640x480 -f 30 -n" -o "/usr/lib/output_http.so -p 8090 -w /var/www/"</label><br>
+	<label>kill -9 `pidof mjpg_streamer` </label><br>
+	<label>Add -b to fork to background</label><br>
 </div>
 
 <!-- 
@@ -78,13 +83,7 @@ Instructions for VNC and VLC
 
 <div id="piinstruc">
 
-	<label>sudo chmod a+x</label><br>
-	<label>vncserver :1 -geometry 1600×900 -depth 16 -pixelformat rgb565:<br />
-		vncserver –kill :1</label><br>
-	<label>sudo service lighttpd start </label><br>
-	<label>mjpg_streamer -i "/usr/lib/input_uvc.so -d /dev/video0 -r 640x480 -f 30 -n" -o "/usr/lib/output_http.so -p 8090 -w /var/www/"</label><br>
-	<label>kill -9 `pidof mjpg_streamer` </label><br>
-	<label>Add -b to fork to background</label><br>
+
 
 </div>
 <!-- End of code -->

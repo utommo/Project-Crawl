@@ -1,21 +1,12 @@
 body{
-	background-image:url('');
-	font-family:Lucida Sans Unicode;
+	background: #262324;
+	font-family:Courier;
+	color:#ccc;
 }
 
 a {
 	text-decoration:none;
-	color:#0E5CA0;
-	outline:none;
-}
-
-a:link {
-	color:none;
-}
-
-a:visited {
-	text-decoration:none;
-	color: #0E5CA0;
+	color: #428bca;;
 	outline:none;
 }
 
@@ -56,8 +47,6 @@ a:visited {
 	float:left;
 	margin:5px;
 	border:1px solid;
-	border-radius:15px;
-	-moz-border-radius:15px;  
 }
 #keyboard_button_placeholder_q,#keyboard_button_placeholder_e{
 	width:70px;
@@ -65,9 +54,6 @@ a:visited {
 	float:left;
 	margin:6px;
 	border:none;
-	border-radius:15px;
-	-moz-border-radius:15px;
-	background-color:#fff;
 }
 
 .button_text{
